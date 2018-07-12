@@ -3,14 +3,20 @@ package com.twu.biblioteca;
 public class BibliotecaApp {
 
     public static void main(String[] args) {
-        System.out.println(openApp());
+        openApp();
+        displayMenu();
     }
 
-    public static String openApp() {
-        return promptMessage.welcome();
+    static String openApp() {
+        String welcomeMessage = "Welcome to Biblioteca!";
+        System.out.println(welcomeMessage);
+        return welcomeMessage;
     }
 
-    static PromptMessage promptMessage = new PromptMessage();
+    static boolean displayMenu() {
+        System.out.println("Menu:1.List Books\n2.Quit\n");
+        return true;
+    }
 
 
 }
