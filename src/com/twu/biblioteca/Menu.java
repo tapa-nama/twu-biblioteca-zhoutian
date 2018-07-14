@@ -5,6 +5,11 @@ import java.io.PrintStream;
 import java.util.Scanner;
 
 public class Menu {
+    public static final int LIST_BOOKS = 1;
+    public static final int CHECK_BOOK = 2;
+    public static final int RETURN_BOOK = 3;
+    public static final int Quit = 4;
+
     boolean displayMenu() {
         System.out.println("Menu:1.List Books\n2.Checkout Book\n3.Return Book\n4.Quit");
         return true;
