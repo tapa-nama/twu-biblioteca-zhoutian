@@ -6,7 +6,7 @@ import java.util.Scanner;
 
 public class Menu {
     public static final int LIST_BOOKS = 1;
-    public static final int CHECK_BOOK = 2;
+    public static final int CHECK_OUT_BOOK = 2;
     public static final int RETURN_BOOK = 3;
     public static final int Quit = 4;
 

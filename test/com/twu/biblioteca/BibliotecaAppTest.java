@@ -9,9 +9,9 @@ import java.io.PrintStream;
 
 import static com.twu.biblioteca.BibliotecaApp.openApp;
 import static com.twu.biblioteca.BibliotecaApp.quitApp;
+import static com.twu.biblioteca.Menu.Quit;
 import static org.junit.Assert.assertEquals;
 import static org.mockito.Mockito.mock;
-import static org.mockito.Mockito.verify;
 import static org.mockito.Mockito.when;
 
 public class BibliotecaAppTest {
@@ -32,7 +32,7 @@ public class BibliotecaAppTest {
     @Test
     public void shouldExitAppWhenSelectQuitOption() {
         OptionAsker asker = mock(OptionAsker.class);
-        when(asker.ask("Please select your option: ")).thenReturn(4);
+        when(asker.ask("Please select your option: ")).thenReturn(Quit);
         quitApp();
         assertEquals(out.toString(), "See you next time!");
     }
