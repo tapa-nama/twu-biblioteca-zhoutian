@@ -1,7 +1,7 @@
 package com.twu.biblioteca;
 
-import com.twu.biblioteca.Books.Book;
-import com.twu.biblioteca.Books.BookList;
+import com.twu.biblioteca.Items.Book;
+import com.twu.biblioteca.Items.BookList;
 import org.junit.Before;
 import org.junit.Test;
 
@@ -12,7 +12,7 @@ import static org.junit.Assert.assertEquals;
 
 
 public class BookListTest {
-    private ByteArrayOutputStream out;
+    public ByteArrayOutputStream out;
 
     @Before
     public void beforeEach() {

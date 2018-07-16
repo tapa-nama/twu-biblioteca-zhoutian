@@ -1,7 +1,8 @@
 package com.twu.biblioteca;
 
 
-import com.twu.biblioteca.Books.BookList;
+import com.twu.biblioteca.Items.BookList;
+import com.twu.biblioteca.Items.MovieList;
 
 import static com.twu.biblioteca.Menu.*;
 
@@ -10,6 +11,7 @@ public class BibliotecaApp {
     public static void main(String[] args) {
         Menu menu = new Menu();
         BookList bookList = new BookList();
+        MovieList movieList = new MovieList();
         openApp();
         menu.displayMenu();
         boolean flag = true;
@@ -25,6 +27,18 @@ public class BibliotecaApp {
                     break;
                 case RETURN_BOOK:
                     bookList.returnBack();
+                    flag = true;
+                    break;
+                case LIST_MOVIES:
+                    movieList.printMovieList();
+                    flag = true;
+                    break;
+                case CHECK_OUT_MOVIE:
+                    movieList.checkOut();
+                    flag = true;
+                    break;
+                case RETURN_MOVIE:
+                    movieList.returnBack();
                     flag = true;
                     break;
                 case QUIT:

@@ -8,10 +8,13 @@ public class Menu {
     public static final int LIST_BOOKS = 1;
     public static final int CHECK_OUT_BOOK = 2;
     public static final int RETURN_BOOK = 3;
-    public static final int QUIT = 4;
+    public static final int LIST_MOVIES = 4;
+    public static final int CHECK_OUT_MOVIE = 5;
+    public static final int RETURN_MOVIE = 6;
+    public static final int QUIT = 7;
 
     boolean displayMenu() {
-        System.out.println("Menu:1.List Books\n2.Checkout Book\n3.Return Book\n4.Quit");
+        System.out.println("Menu:1.List books\n2.Checkout Book\n3.Return Book\n4.List movies\n5.Checkout Movie\n6.Return Movie\n7.Quit");
         return true;
     }
 }
@@ -32,7 +35,7 @@ class OptionAsker {
 
     public static int getOptionFromUser(OptionAsker asker) {
         int input = asker.ask("Please select your option: ");
-        while (input < 1 || input > 4) {
+        while (input < 1 || input > 7) {
             input = asker.ask("Select a valid option!");
         }
         return input;
