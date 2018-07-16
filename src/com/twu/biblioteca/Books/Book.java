@@ -54,7 +54,7 @@ public class Book {
     }
 
     boolean equalsTo(Book book) {
-        return title.equals(book.getTitle()) && author.equals(book.getAuthor()) && publishedYear == book.getPublishedYear();
+        return title.equals(book.getTitle());
     }
 
 }

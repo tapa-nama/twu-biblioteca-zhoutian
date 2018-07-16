@@ -3,9 +3,7 @@ package com.twu.biblioteca;
 
 import com.twu.biblioteca.Books.BookList;
 
-import static com.twu.biblioteca.Menu.CHECK_OUT_BOOK;
-import static com.twu.biblioteca.Menu.LIST_BOOKS;
-import static com.twu.biblioteca.Menu.Quit;
+import static com.twu.biblioteca.Menu.*;
 
 public class BibliotecaApp {
 
@@ -25,8 +23,13 @@ public class BibliotecaApp {
                     bookList.checkOut();
                     flag = true;
                     break;
-                case Quit:
+                case RETURN_BOOK:
+                    bookList.returnBack();
+                    flag = true;
+                    break;
+                case QUIT:
                     quitApp();
+                    System.exit(0);
             }
         }
     }
@@ -39,7 +42,6 @@ public class BibliotecaApp {
 
     static void quitApp() {
         System.out.print("See you next time!");
-        System.exit(0);
     }
 
 
