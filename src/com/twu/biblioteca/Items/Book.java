@@ -1,10 +1,13 @@
 package com.twu.biblioteca.Items;
 
+import com.twu.biblioteca.User;
+
 public class Book {
     private String title;
     private String author;
     private int publishedYear;
     private boolean isAvailable;
+    private User holder;
 
     public Book(String title, String author, int publishedYear) {
         this.title = title;
@@ -47,6 +50,13 @@ public class Book {
     String unReturned() {
         isAvailable = false;
         return "That is not a valid book to return.";
+    }
+
+    void setHolder(User user) {
+        holder = user;
+    }
+    User getHolder() {
+        return holder;
     }
 
     void details() {
