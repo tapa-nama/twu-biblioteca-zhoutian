@@ -1,39 +1,35 @@
 package com.twu.biblioteca;
 
-import java.io.PrintStream;
 import java.util.ArrayList;
 
 public class UserManager {
+
     private ArrayList<User> userList;
-    private User user;
+    private User currentUser;
 
-    public UserManager(ArrayList<User> userList) {
-        this.userList = userList;
+    public UserManager() {
+        userList = new ArrayList<>();
+        userList.add(new User("111-1111", "password1", "Zhao", "zhao@gmail.com", "18200288371"));
+        userList.add(new User("222-2222", "password2", "Qian", "qian@gmail.com", "18200288372"));
+        userList.add(new User("333-3333", "password3", "Sun", "sun@gmail.com", "18200288373"));
+        userList.add(new User("444-4444", "password4", "Li", "li@gmail.com", "18200288374"));
+
     }
 
-    public User getUser() {
-        return user;
+    public boolean logIn(String libraryNumber, String password) {
+        if (getUser(libraryNumber, password) != null)
+            return true;
+        return false;
     }
 
-    public String logIn(String libraryNumber, String password) {
-        if (user != null) {
-            return "The user is logged in.";
-        }
-        user = getUser(libraryNumber, password);
-        if (user == null) {
-            return "LibraryNumber or password is invalid.";
-        }
-        return "Logged in successfully.";
-    }
-
-    public String logOut() {
-        user = null;
-        return "Logged out successfully.";
+    public String userInfo() {
+        return currentUser.getName() + ", " + currentUser.getEmailAddress() + ", " + currentUser.getPhoneNumber();
     }
 
     private User getUser(String libraryNumber, String password) {
         for (User user : userList) {
             if (user.getLibraryNumber().equals(libraryNumber) && user.getPassword().equals(password)) {
+                currentUser = user;
                 return user;
             }
         }
