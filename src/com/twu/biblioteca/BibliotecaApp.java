@@ -1,51 +1,26 @@
 package com.twu.biblioteca;
 
 
-import com.twu.biblioteca.Items.BookList;
-import com.twu.biblioteca.Items.MovieList;
+import com.twu.biblioteca.Menu.InputAsker;
+import com.twu.biblioteca.Menu.LibrarianMenu;
+import com.twu.biblioteca.Menu.MainMenu;
+import com.twu.biblioteca.Menu.UserMenu;
 
-import static com.twu.biblioteca.Menu.*;
+import static com.twu.biblioteca.Menu.MainMenu.EXIT;
+import static com.twu.biblioteca.Menu.MainMenu.LIBRARIAN_LOG_IN;
+import static com.twu.biblioteca.Menu.MainMenu.USER_LOG_IN;
+
 
 public class BibliotecaApp {
 
+
     public static void main(String[] args) {
-        Menu menu = new Menu();
-        BookList bookList = new BookList();
-        MovieList movieList = new MovieList();
+
         openApp();
-        menu.displayMenu();
-        boolean flag = true;
-        while (flag) {
-            switch (OptionAsker.getOptionFromUser(new OptionAsker(System.in, System.out))) {
-                case LIST_BOOKS:
-                    bookList.printBookList();
-                    flag = true;
-                    break;
-                case CHECK_OUT_BOOK:
-                    bookList.checkOut();
-                    flag = true;
-                    break;
-                case RETURN_BOOK:
-                    bookList.returnBack();
-                    flag = true;
-                    break;
-                case LIST_MOVIES:
-                    movieList.printMovieList();
-                    flag = true;
-                    break;
-                case CHECK_OUT_MOVIE:
-                    movieList.checkOut();
-                    flag = true;
-                    break;
-                case RETURN_MOVIE:
-                    movieList.returnBack();
-                    flag = true;
-                    break;
-                case QUIT:
-                    quitApp();
-                    System.exit(0);
-            }
-        }
+        MainMenu.displayMainMenu();
+        MainMenu.selectMainMenuOption();
+
+
     }
 
     static String openApp() {
@@ -54,7 +29,7 @@ public class BibliotecaApp {
         return welcomeMessage;
     }
 
-    static void quitApp() {
+    public static void quitApp() {
         System.out.print("See you next time!");
     }
 

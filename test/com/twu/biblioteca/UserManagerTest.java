@@ -29,7 +29,7 @@ public class UserManagerTest {
     @Test
     public void shouldReturnUserInfoWhenLoggedIn() {
         userManager.logIn("111-1111", "password1");
-        assertEquals(userManager.userInfo(),"Zhao, zhao@gmail.com, 18200288371");
+        assertEquals(userManager.getUserInfo(),"Zhao, zhao@gmail.com, 18200288371");
     }
 
 }

@@ -1,5 +1,6 @@
 package com.twu.biblioteca;
 
+
 import java.util.ArrayList;
 
 public class UserManager {
@@ -16,6 +17,8 @@ public class UserManager {
 
     }
 
+    public static User librarian = new User("000-0000", "password0", "", "", "");
+
     public boolean logIn(String libraryNumber, String password) {
         getUser(libraryNumber, password);
         if (currentUser != null)
@@ -23,7 +26,24 @@ public class UserManager {
         return false;
     }
 
-    public String userInfo() {
+    public void logOut() {
+        if (currentUser == null) {
+            System.out.println("You are not logged in.");
+        } else {
+            currentUser = null;
+            System.out.println("Log out successfully!");
+        }
+    }
+
+    public boolean adminLogIn(String libraryNumber, String password) {
+        getLibrarian(libraryNumber, password);
+        if (currentUser != null)
+            return true;
+        return false;
+    }
+
+
+    public String getUserInfo() {
         return currentUser.getName() + ", " + currentUser.getEmailAddress() + ", " + currentUser.getPhoneNumber();
     }
 
@@ -33,5 +53,10 @@ public class UserManager {
                 currentUser = user;
             }
         }
+    }
+
+    private void getLibrarian(String libraryNumber, String password) {
+        if (libraryNumber.equals("000-0000") && password.equals("password0"))
+            currentUser = librarian;
     }
 }
