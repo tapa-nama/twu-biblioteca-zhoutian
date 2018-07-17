@@ -10,7 +10,6 @@ public class MovieList {
     private HashMap<Movie, User> movieRentRecord;
 
 
-
     public MovieList() {
         movieList = new ArrayList<>();
         movieList.add(new Movie("Burning", 2018, "Lee Chang-dong", 7.9));
@@ -57,10 +56,10 @@ public class MovieList {
     }
 
     public String showMovieRentRecord() {
-        Iterator<Map.Entry<Movie,User>> iterators = movieRentRecord.entrySet().iterator();
+        Iterator<Map.Entry<Movie, User>> iterators = movieRentRecord.entrySet().iterator();
         while (iterators.hasNext()) {
-            Map.Entry<Movie,User> iterator = iterators.next();
-            return iterator.getKey().getName()+" is checked out by " + iterator.getValue().getName();
+            Map.Entry<Movie, User> iterator = iterators.next();
+            return iterator.getKey().getName() + " is checked out by " + iterator.getValue().getName();
         }
         return null;
     }

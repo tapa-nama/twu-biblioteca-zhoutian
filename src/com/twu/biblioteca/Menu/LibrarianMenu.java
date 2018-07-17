@@ -41,11 +41,11 @@ public class LibrarianMenu {
         while (flag) {
             switch (getLibrarianOption(new InputAsker(System.in, System.out))) {
                 case BOOK_RENT_RECORD:
-                    bookList.showBookRentRecord();
+                    System.out.println(bookList.showBookRentRecord());
                     flag = true;
                     break;
                 case MOVIE_RENT_RECORD:
-                    movieList.showMovieRentRecord();
+                    System.out.println(movieList.showMovieRentRecord());
                     flag = true;
                     break;
                 case LOG_OUT:

@@ -1,7 +1,5 @@
 package com.twu.biblioteca.Items;
 
-import com.twu.biblioteca.User;
-
 public class Book {
     private String title;
     private String author;

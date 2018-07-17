@@ -1,7 +1,5 @@
 package com.twu.biblioteca.Items;
 
-import com.twu.biblioteca.User;
-
 public class Movie {
     private String name;
     private int year;

@@ -23,7 +23,7 @@ public class UserManagerTest {
 
     @Test
     public void shouldReturnFalseWhenLoggedInUnsuccessfully() {
-        assertFalse(userManager.logIn("000-0000", "password0"));
+        assertFalse(userManager.logIn("999-9999", "password9"));
     }
 
     @Test

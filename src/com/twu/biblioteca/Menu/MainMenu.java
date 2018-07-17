@@ -7,8 +7,6 @@ public class MainMenu {
     public static final int USER_LOG_IN = 1;
     public static final int LIBRARIAN_LOG_IN = 2;
     public static final int EXIT = 3;
-//    UserMenu userMenu = new UserMenu();
-//    LibrarianMenu librarianMenu = new LibrarianMenu();
 
 
     public static boolean displayMainMenu() {
