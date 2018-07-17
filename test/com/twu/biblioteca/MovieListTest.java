@@ -12,14 +12,21 @@ import static org.junit.Assert.assertEquals;
 
 public class MovieListTest {
     public ByteArrayOutputStream out;
+    private Movie movie;
+    private MovieList movieList;
+    private UserManager userManager;
 
     @Before
     public void beforeEach() {
         out = new ByteArrayOutputStream();
         System.setOut(new PrintStream(out));
+        movieList = new MovieList();
+        movie = new Movie("Burning", 2018, "Lee Chang-dong", 7.9);
+        userManager = new UserManager();
+        userManager.logIn("222-2222", "password2");
     }
 
-    MovieList movieList = new MovieList();
+
 
     @Test
     public void shouldReturnMovieList() {
@@ -73,5 +80,11 @@ public class MovieListTest {
     public void shouldPromptMeaasgeWhenReturnUnsuccessfully() {
         System.out.print(movieList.returnBackMovie(new Movie("Kaili Blues", 0, "", 0.0)));
         assertEquals(out.toString(), "That is not a valid movie to return.");
+    }
+
+    @Test
+    public void shouldUpdateMovieRentRecordWhenCheckOut() {
+        movieList.checkOutMovie(movie);
+        assertEquals(movieList.showMovieRentRecord(),"Burning is checked out by Qian");
     }
 }

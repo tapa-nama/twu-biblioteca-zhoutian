@@ -5,7 +5,7 @@ import java.util.ArrayList;
 public class UserManager {
 
     private ArrayList<User> userList;
-    private User currentUser;
+    public static User currentUser;
 
     public UserManager() {
         userList = new ArrayList<>();
@@ -17,7 +17,8 @@ public class UserManager {
     }
 
     public boolean logIn(String libraryNumber, String password) {
-        if (getUser(libraryNumber, password) != null)
+        getUser(libraryNumber, password);
+        if (currentUser != null)
             return true;
         return false;
     }
@@ -26,13 +27,11 @@ public class UserManager {
         return currentUser.getName() + ", " + currentUser.getEmailAddress() + ", " + currentUser.getPhoneNumber();
     }
 
-    private User getUser(String libraryNumber, String password) {
+    private void getUser(String libraryNumber, String password) {
         for (User user : userList) {
             if (user.getLibraryNumber().equals(libraryNumber) && user.getPassword().equals(password)) {
                 currentUser = user;
-                return user;
             }
         }
-        return null;
     }
 }

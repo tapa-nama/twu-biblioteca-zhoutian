@@ -8,7 +8,7 @@ public class Movie {
     private String director;
     private double rating;
     private boolean isAvailable;
-    private User holder;
+
 
     public Movie(String name, int year, String director, double rating) {
         this.name = name;
@@ -56,13 +56,6 @@ public class Movie {
     String unReturned() {
         isAvailable = false;
         return "That is not a valid movie to return.";
-    }
-
-    void setHolder(User user) {
-        holder = user;
-    }
-    User getHolder() {
-        return holder;
     }
 
     void details() {
